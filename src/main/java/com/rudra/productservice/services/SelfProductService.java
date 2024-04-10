@@ -1,16 +1,14 @@
 package com.rudra.productservice.services;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.rudra.productservice.Exceptions.ProductNotExistsException;
 import com.rudra.productservice.Repositories.CategoryRepository;
 import com.rudra.productservice.Repositories.ProductRepository;
-import com.rudra.productservice.dtos.FakeStoreProductDto;
+import com.rudra.productservice.dtos.msgBody;
 import com.rudra.productservice.models.Category;
 import com.rudra.productservice.models.Product;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -125,4 +123,11 @@ public class SelfProductService implements ProductService{
 
         return productRepository.save(p);
     }
+
+    @Override
+    public msgBody getBody(msgBody text) {
+        System.out.println(text);
+        return null;
+    }
+
 }

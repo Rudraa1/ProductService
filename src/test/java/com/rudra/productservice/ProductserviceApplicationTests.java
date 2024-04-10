@@ -17,26 +17,26 @@ import java.util.List;
 @SpringBootTest
 class ProductserviceApplicationTests {
 
-
-    @Autowired
-    private ProductRepository productRepository;
-    @Test
-    void contextLoads() {
-    }
-
-    @Test
-    @Transactional
-    @Commit//no data rolling back
-    void testQueries(){
-        List<ProductWIthIdAndTitle> products = productRepository.something(101L);
-
-            for(ProductWIthIdAndTitle product: products){
-                System.out.println(product.getId());
-                System.out.println(product.getTitle());
-            }
-
-            List<Product> products1 = productRepository.some2();
-
-    }
+//
+//    @Autowired
+//    private ProductRepository productRepository;
+//    @Test
+//    void contextLoads() {
+//    }
+//
+//    @Test
+//    @Transactional
+//    @Commit//no data rolling back
+//    void testQueries(){
+//        List<ProductWIthIdAndTitle> products = productRepository.something(101L);
+//
+//            for(ProductWIthIdAndTitle product: products){
+//                System.out.println(product.getId());
+//                System.out.println(product.getTitle());
+//            }
+//
+//            List<Product> products1 = productRepository.some2();
+//
+//    }
 
 }

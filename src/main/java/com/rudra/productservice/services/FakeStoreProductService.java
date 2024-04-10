@@ -1,21 +1,17 @@
 package com.rudra.productservice.services;
 
 import com.rudra.productservice.Exceptions.ProductNotExistsException;
-import com.rudra.productservice.Repositories.CategoryRepository;
 import com.rudra.productservice.dtos.FakeStoreProductDto;
+import com.rudra.productservice.dtos.msgBody;
 import com.rudra.productservice.models.Category;
 import com.rudra.productservice.models.Product;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpMessageConverterExtractor;
 import org.springframework.web.client.RequestCallback;
 import org.springframework.web.client.RestTemplate;
 
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -194,4 +190,18 @@ public class FakeStoreProductService implements ProductService {
 
         return convertFakeStoreProductToProduct(productDto);
     }
+
+    @Override
+    public msgBody getBody(msgBody text) {
+        msgBody msg = restTemplate.postForObject(
+                "http://localhost:3000/msgBody",
+                null,
+                msgBody.class
+        );
+
+        System.out.println(msg);
+        return null;
+    }
+
+
 }
